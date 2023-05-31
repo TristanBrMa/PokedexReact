@@ -1,4 +1,5 @@
 import PokemonCard from "./components/PokemonCard";
+import NavBar from "./components/NavBar";
 import { useState } from "react";
 const pokemonList = [
   {
@@ -33,16 +34,17 @@ function App() {
   const handleClickMinus = () => {
     setCount(count - 1);
   };
-  // const isVisble = count !== 0;
-  // const isVisble2 = count !== pokemonList.length - 1;
+
   const pokemon = pokemonList[count];
   return (
     <div>
       <PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc} />
-      {count > 0 && <button onClick={handleClickMinus}>précédent</button>}
-      {count < pokemonList.length - 1 && (
-        <button onClick={handleClick}>suivant</button>
-      )}
+      <NavBar
+        handleClick={handleClick}
+        handleClickMinus={handleClickMinus}
+        count={count}
+        pokemonList={pokemonList}
+      />
     </div>
   );
 }
