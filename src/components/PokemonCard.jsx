@@ -12,7 +12,7 @@ const PokemonCard = ({ name, imgSrc }) => {
 
 export default PokemonCard;
 
-PokemonCard.PropTypes = {
+PokemonCard.propTypes = {
   name: PropTypes.string.isRequired,
-  imgSrc: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string,
 };

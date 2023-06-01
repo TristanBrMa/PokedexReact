@@ -28,24 +28,13 @@ const pokemonList = [
 ];
 function App() {
   const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount(count + 1);
-  };
-  const handleClickMinus = () => {
-    setCount(count - 1);
-  };
 
   const pokemon = pokemonList[count];
   return (
-    <div>
+    <>
       <PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc} />
-      <NavBar
-        handleClick={handleClick}
-        handleClickMinus={handleClickMinus}
-        count={count}
-        pokemonList={pokemonList}
-      />
-    </div>
+      <NavBar setCount={setCount} pokemonList={pokemonList} count={count} />
+    </>
   );
 }
 export default App;
