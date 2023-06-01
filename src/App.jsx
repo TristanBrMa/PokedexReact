@@ -1,6 +1,6 @@
 import PokemonCard from "./components/PokemonCard";
 import NavBar from "./components/NavBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const pokemonList = [
   {
     name: "bulbasaur",
@@ -36,6 +36,9 @@ function App() {
   };
 
   const pokemon = pokemonList[count];
+  useEffect(() => {
+    alert("hello pokemon trainer :)");
+  }, []);
   return (
     <div>
       <PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc} />
